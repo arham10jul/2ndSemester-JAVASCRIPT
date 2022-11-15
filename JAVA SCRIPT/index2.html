@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+   
+    function ShowCount (num) {
+        console.log('Printing Prime Numbers Until 600' , num) ;
+
+        
+    }
+    function CountPrime(callbackfunc){
+         setTimeout(function(){
+        var count_prime=0;
+        var isprime=true;
+        for (var i=3; i<600; i++) {
+            isprime=true;
+            for (var j=2; j<i; j++){
+                if (i % j===0){
+                    isprime=false;
+                    break;
+                }
+            }
+            if (isprime){
+                console.log(i);
+                count_prime +=  1;
+
+            }
+        }
+        callbackfunc(count_prime);
+    },0);
+    }
+    console.log('started');
+    CountPrime(ShowCount);
+    console.log('Finished');
+</script>
